@@ -48,3 +48,15 @@ CREATE TABLE doctors(
 	paymentdate TIME
 	
 );
+
+CREATE TABLE medicalrecords(
+	recordid SERIAL PRIMARY KEY,
+	animalid INT,
+	FOREIGN KEY (animalid) references animals(animalid),
+	recorddate TIMESTAMP,
+	doctorid INT,
+	FOREIGN KEY (doctorid) REFERENCES doctors(doctorid),
+	diagnosis TEXT,
+	prescription TEXT,
+	notes TEXT
+);	
