@@ -39,7 +39,7 @@ CREATE TABLE doctors(
 	email VARCHAR(100)
 	);
 
-    CREATE TABLE invoice
+    CREATE TABLE invoices
 (
 	invoiceid SERIAL PRIMARY KEY,
 	appointid INT,
@@ -137,3 +137,6 @@ VALUES
     ('10', '10', '2023-05-20 00:00:00', '6', 'Conjunctivitis', 'Eye drops', 'Prescribed eye drops for conjunctivitis');
 
     ALTER TABLE owners ADD COLUMN registereddate DATE;
+
+    ALTER TABLE invoices
+    RENAME COLUMN paymentdate TO paymenttime;
