@@ -154,4 +154,11 @@ VALUES
     SELECT SUM(totalamount) AS total_sales
     FROM invoices;
 
+    SELECT o.ofirstname AS "Owner", COUNT(app.appointid) AS "Total Appointments"
+	FROM owners o
+	JOIN animals a ON o.ownerid = a.ownerid
+	JOIN appointments app ON a.animalid = app.animalid
+	WHERE o.ofirstname = 'Maria'
+	GROUP BY o.ofirstname;
+
 
